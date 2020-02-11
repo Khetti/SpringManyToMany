@@ -19,10 +19,15 @@ public class File {
     @Column(name = "size")
     private double size;
 
-    public File(String name, String extension, double size) {
+    @ManyToOne
+    @JoinColumn(name = "folder_id", nullable = false)
+    private Folder folder;
+
+    public File(String name, String extension, double size, Folder folder) {
         this.name = name;
         this.extension = extension;
         this.size = size;
+        this.folder = folder;
     }
 
     public File() {
