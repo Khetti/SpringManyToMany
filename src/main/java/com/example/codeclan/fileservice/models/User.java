@@ -1,7 +1,8 @@
 package com.example.codeclan.fileservice.models;
 
-import javax.persistence.Entity;
-import javax.persistence.Table;
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -9,8 +10,15 @@ import java.util.List;
 @Table(name = "users")
 public class User {
 
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
+    @Column(name = "name")
     private String name;
+
+    @JsonBackReference
+    @OneToMany(mappedBy = "user")
     private List<Folder> folders;
 
     public User(String name) {
