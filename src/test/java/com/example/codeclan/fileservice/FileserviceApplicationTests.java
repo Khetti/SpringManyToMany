@@ -12,10 +12,10 @@ import org.springframework.boot.test.context.SpringBootTest;
 class FileserviceApplicationTests {
 
 	@Autowired
-	private FileRepository fileRepository;
+	private FolderRepository folderRepository;
 
 	@Autowired
-	private FolderRepository folderRepository;
+	private FileRepository fileRepository;
 
 	@Test
 	void contextLoads() {
