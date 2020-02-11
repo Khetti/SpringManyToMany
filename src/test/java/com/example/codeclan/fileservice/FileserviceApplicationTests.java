@@ -10,4 +10,9 @@ class FileserviceApplicationTests {
 	void contextLoads() {
 	}
 
+	@Test
+	public void canCreateAndSaveObjects() {
+
+	}
+
 }
